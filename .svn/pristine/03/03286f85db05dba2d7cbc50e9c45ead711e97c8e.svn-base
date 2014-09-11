@@ -1,0 +1,40 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/title"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/title_largepic" >
+
+    <Button
+        android:id="@id/title_btn_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:background="@drawable/bt_title_back_showlargepic"
+        android:text="@string/back"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_8" />
+
+    <Button
+        android:id="@id/title_btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/margin_15"
+        android:background="@drawable/bt_title_right_showlargepic"
+        android:padding="@dimen/margin_10"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_8" />
+
+    <TextView
+        android:id="@id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_9"
+        tools:ignore="SelectableText" />
+
+</FrameLayout>

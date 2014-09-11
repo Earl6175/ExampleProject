@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+
+    <xtom.frame.view.XtomRefreshLoadmoreLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:fillViewport="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <!-- 编辑资料 -->
+
+                <Button
+                    android:id="@id/layout_0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_editinfor"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 修改密码 -->
+
+                <Button
+                    android:id="@id/layout_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_chanagepwd"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <!-- 清除缓存 -->
+
+                <Button
+                    android:id="@id/layout_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_40"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_clearcache"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 意见反馈 -->
+
+                <Button
+                    android:id="@id/layout_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_feedback"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 版本更新 -->
+
+                <Button
+                    android:id="@id/layout_4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_checkupdate"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 关于我们 -->
+
+                <Button
+                    android:id="@id/layout_5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_25"
+                    android:paddingBottom="@dimen/margin_25"
+                    android:text="@string/set_aboutme"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 邀请注册 -->
+
+                <Button
+                    android:id="@id/layout_6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="@dimen/margin_25"
+                    android:paddingRight="@dimen/margin_35"
+                    android:paddingTop="@dimen/margin_30"
+                    android:paddingBottom="@dimen/margin_30"
+                    android:text="@string/set_invite"
+                    android:textColor="@color/title"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_45"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <!-- 注销登录 -->
+
+                <Button
+                    android:id="@id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin_80"
+                    android:layout_marginBottom="@dimen/margin_80"
+                    android:background="@drawable/btn_login"
+                    android:text="@string/set_exit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_9" />
+            </LinearLayout>
+        </ScrollView>
+    </xtom.frame.view.XtomRefreshLoadmoreLayout>
+
+</LinearLayout>

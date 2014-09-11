@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/background"
+    android:orientation="vertical" >
+    
+   <TextView 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="@dimen/margin_30"
+       android:layout_marginBottom="@dimen/margin_30"
+       android:text="@string/shareto"
+       android:textColor="@color/qianhui"
+       android:textSize="@dimen/textsize_8"/>
+   
+   <RadioGroup
+       android:id="@id/radiogroup"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="@dimen/margin_20"
+       android:layout_marginRight="@dimen/margin_20"
+       android:orientation="horizontal">
+       
+       <RadioButton 
+           android:id="@id/radiobutton_0"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:button="@null"
+           android:drawableTop="@drawable/logo_wechat"
+           android:text="@string/weixin"
+           android:textColor="@color/set"/>
+       
+       <RadioButton 
+           android:id="@id/radiobutton_1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:button="@null"
+           android:drawableTop="@drawable/logo_qq"
+           android:text="@string/qq"
+           android:textColor="@color/set"/>
+       <RadioButton 
+           android:id="@id/radiobutton_2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_weight="1"
+           android:button="@null"
+           android:drawableTop="@drawable/logo_sinaweibo"
+           android:text="@string/sinaweibo"
+           android:textColor="@color/set"/>      
+   </RadioGroup>
+   
+   <TextView
+        android:id="@id/textview"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/margin_30"
+        android:paddingBottom="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_30"
+        android:background="@color/background"
+        android:gravity="center"
+        android:text="@string/cancle" 
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_9"/>
+   
+
+</LinearLayout>

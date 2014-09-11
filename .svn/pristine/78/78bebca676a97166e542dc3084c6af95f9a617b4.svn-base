@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin_20"
+    android:paddingRight="@dimen/margin_20"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@id/textview_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:drawableLeft="@drawable/img_time"
+        android:drawablePadding="@dimen/margin_15"
+        android:text="2014-02-12 08:12"
+        android:textColor="@color/qianhui"
+        android:textSize="@dimen/textsize_7"/>
+    
+    <TextView 
+        android:id="@id/textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:text=""
+        android:textColor="@color/set"
+        android:textSize="@dimen/textsize_8"/>
+    
+    <ImageView 
+        android:id="@id/imageview"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="@dimen/margin_20"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@string/contentdescription"/>
+    
+    <TextView 
+        android:id="@id/textview_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:maxLines="1"
+        android:textColor="@color/qianhui"
+        android:textSize="@dimen/textsize_8"/>
+    
+</LinearLayout>

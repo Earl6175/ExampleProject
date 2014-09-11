@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+
+    <net.wb_gydp.view.RefreshLoadmoreLayout
+        android:id="@id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_30"
+                    android:text="@string/account_yue"
+                    android:textColor="@color/qianhui"
+                    android:textSize="@dimen/textsize_8" />
+
+                <TextView
+                    android:id="@id/textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/margin_30"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="5566"
+                    android:textColor="@color/yellow"
+                    android:textSize="@dimen/textsize_12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/layout_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_35" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chargerecord"
+                    android:textColor="@color/set"
+                    android:textSize="@dimen/textsize_8" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/margin_10"
+                    android:drawableRight="@drawable/img_triangle"
+                    android:gravity="right"
+                    android:text=""
+                    android:textColor="@color/shenhui"
+                    android:textSize="@dimen/textsize_8" />
+            </LinearLayout>
+
+            <Button
+                android:id="@id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_80"
+                android:background="@drawable/btn_login"
+                android:text="@string/charge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_9" />
+        </LinearLayout>
+    </net.wb_gydp.view.RefreshLoadmoreLayout>
+
+</LinearLayout>

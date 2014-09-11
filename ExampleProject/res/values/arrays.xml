@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="firstpage">
+        <item>正在募捐</item>
+        <item>已在实施</item>
+        <item>实施完成</item>
+    </string-array>
+    <string-array name="senddianping">
+        <item>拍照</item>
+        <item>从相册选择</item>
+        <item>取消</item>
+    </string-array>
+    <string-array name="dianping">
+        <item>我要点评</item>
+        <item>受助反馈</item>
+        <item>项目实施</item>
+        <item>取消</item>
+    </string-array>
+</resources>

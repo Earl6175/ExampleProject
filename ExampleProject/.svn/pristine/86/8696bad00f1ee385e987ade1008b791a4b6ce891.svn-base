@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <!-- 捐款总额 -->
+    <LinearLayout 
+        android:id="@id/layout_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_35"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="@string/contribute_count"
+            android:textColor="@color/set"
+            android:textSize="@dimen/textsize_8"/>
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yuan1"
+            android:textSize="@dimen/textsize_5"
+            android:textColor="@color/set"/>
+        
+        <TextView 
+            android:id="@id/textview_0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/shenhui"
+            android:textSize="@dimen/textsize_8"
+            android:drawableRight="@drawable/img_triangle"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"/>
+    </LinearLayout>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@color/background"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:contentDescription="@string/contentdescription"/>
+    <!-- 发布的项目 -->
+    <LinearLayout 
+        android:id="@id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_35"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="@string/project_fabu"
+            android:textColor="@color/set"
+            android:textSize="@dimen/textsize_8"/>
+        
+        <TextView 
+            android:id="@id/textview_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/shenhui"
+            android:textSize="@dimen/textsize_8"
+            android:drawableRight="@drawable/img_triangle"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"/>
+    </LinearLayout>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@color/background"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:contentDescription="@string/contentdescription"/>
+    <!-- 捐款的项目 -->
+    <LinearLayout 
+        android:id="@id/layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_35"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="@string/project_juankuan"
+            android:textColor="@color/set"
+            android:textSize="@dimen/textsize_8"/>
+        
+        <TextView 
+            android:id="@id/textview_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/shenhui"
+            android:textSize="@dimen/textsize_8"
+            android:drawableRight="@drawable/img_triangle"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"/>
+    </LinearLayout>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@color/background"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:contentDescription="@string/contentdescription"/>
+    <!-- 收藏的项目 -->
+    <LinearLayout 
+        android:id="@id/layout_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_35"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="@string/project_shoucang"
+            android:textColor="@color/set"
+            android:textSize="@dimen/textsize_8"/>
+        
+        <TextView 
+            android:id="@id/textview_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/shenhui"
+            android:textSize="@dimen/textsize_8"
+            android:drawableRight="@drawable/img_triangle"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"/>
+    </LinearLayout>
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@color/background"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:contentDescription="@string/contentdescription"/>
+    <!-- 积分 -->
+    <LinearLayout 
+        android:id="@id/layout_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_35"
+        android:orientation="horizontal">
+        
+        <TextView 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content"
+            android:text="@string/scroe"
+            android:textColor="@color/set"
+            android:textSize="@dimen/textsize_8"/>
+        
+        <TextView 
+            android:id="@id/textview_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/shenhui"
+            android:textSize="@dimen/textsize_8"
+            android:drawableRight="@drawable/img_triangle"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"/>
+    </LinearLayout>
+</LinearLayout>

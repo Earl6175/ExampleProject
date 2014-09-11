@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <!-- 标题栏 -->
+    <include 
+        layout="@layout/title_alltext"/>
+    
+    <EditText 
+        android:id="@id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/white"
+        android:padding="@dimen/margin_25"
+        android:hint="@string/inputdianping"
+        android:textColorHint="@color/qianhui"
+        android:gravity="left|top"
+        android:text=""
+        android:textColor="@color/set"
+        android:textSize="@dimen/textsize_8"/>
+    
+    <TextView 
+        android:id="@id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_marginTop="@dimen/margin_10"
+        android:layout_marginBottom="@dimen/margin_30"
+        android:gravity="right"
+        android:text="0/500"
+        android:textColor="@color/qianhui"
+        android:textSize="@dimen/textsize_6"/>
+    
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"
+        android:contentDescription="@string/contentdescription"/>
+    
+    <ImageView 
+        android:id="@id/imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_dianping"
+        android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginLeft="@dimen/margin_35"
+        android:layout_marginBottom="@dimen/margin_25"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/contentdescription"/>
+    
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"
+        android:contentDescription="@string/contentdescription"/>
+    
+</LinearLayout>

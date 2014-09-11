@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+
+    <!-- 输入手机号 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_50"
+        android:background="@color/white"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@id/edittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_25"
+            android:layout_marginBottom="@dimen/margin_25"
+            android:layout_marginLeft="@dimen/margin_25"
+            android:background="@null"
+            android:layout_weight="1"
+            android:hint="@string/inputphone"
+            android:inputType="number"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_8"
+            android:textColorHint="@color/qianhui" />
+        
+        <ImageView
+            android:id="@id/imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_25"
+            android:layout_marginLeft="@dimen/margin_25"
+            android:contentDescription="@string/contentdescription"
+            android:src="@drawable/img_clear" />
+    </LinearLayout>
+    
+    <!-- 输入验证码 -->
+    <include layout="@layout/input_verify_code"/>
+    <!-- 下一步 -->
+    <Button
+        android:id="@id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_80"
+        android:background="@drawable/btn_login"
+        android:text="@string/gonext"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_9" />
+
+</LinearLayout>

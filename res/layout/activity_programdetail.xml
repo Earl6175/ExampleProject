@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_projectdetail" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <net.wb_gydp.view.RefreshLoadmoreLayout
+            android:id="@+id/refreshLoadmoreLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_110"
+            android:visibility="invisible" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <!-- 项目的基本信息 -->
+
+                    <include
+                        android:id="@id/view_0"
+                        layout="@layout/programdetail_0" />
+                    <!-- 项目详情 -->
+
+                    <include
+                        android:id="@id/view_1"
+                        layout="@layout/programdetail_1" />
+                    <!-- 项目反馈 -->
+
+                    <include
+                        android:id="@id/view_2"
+                        layout="@layout/programdetail_2" />
+                    <!-- 益友点评 -->
+
+                    <include
+                        android:id="@id/view_4"
+                        layout="@layout/programdetail_6" />
+                    <!-- 爱心名单 -->
+
+                    <include
+                        android:id="@id/view_5"
+                        layout="@layout/programdetail_3" />
+                    <!-- 发起者、授权机构 -->
+
+                    <include
+                        android:id="@id/view_6"
+                        layout="@layout/programdetail_4" />
+                </LinearLayout>
+            </ScrollView>
+        </net.wb_gydp.view.RefreshLoadmoreLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/margin_100"
+            android:layout_gravity="bottom"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/layout_ding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/image_ding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_20"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@drawable/img_zan_n" />
+
+                <TextView
+                    android:id="@+id/praise_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="1201"
+                    android:textColor="@color/qianhui"
+                    android:textSize="@dimen/textsize_8" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/dianping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_15"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_15"
+                android:layout_weight="1.8"
+                android:background="@drawable/bg_dianping"
+                android:paddingLeft="@dimen/margin_20"
+                android:paddingRight="@dimen/margin_20"
+                android:text="@string/wolaidianping"
+                android:textColor="@color/qianhui"
+                android:textSize="@dimen/textsize_8" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:layout_weight="1"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/comment_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1250"
+                    android:textColor="@color/qianhui"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@drawable/detail_reply" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@drawable/img_shuxian" />
+
+                <TextView
+                    android:id="@+id/favorite_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="1250"
+                    android:textColor="@color/qianhui"
+                    android:textSize="@dimen/textsize_8" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@drawable/detail_count" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

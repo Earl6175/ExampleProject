@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <net.wb_gydp.view.RefreshLoadmoreLayout
+            android:id="@id/refreshLoadmoreLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/margin_40"
+                        android:paddingLeft="@dimen/margin_30"
+                        android:paddingRight="@dimen/margin_30"
+                        android:paddingTop="@dimen/margin_40" >
+
+                        <TextView
+                            android:id="@id/textview_0"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="贫困学生自助学习,老师赞扬-----------"
+                            android:textColor="@color/set"
+                            android:textSize="@dimen/textsize_9" />
+
+                        <TextView
+                            android:id="@id/textview_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:maxLines="2"
+                            android:text="贫困学生自助学习,老师赞扬-----------"
+                            android:textColor="@color/shenhui"
+                            android:textSize="@dimen/textsize_7" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:contentDescription="@string/contentdescription"
+                        android:src="@color/background" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical" >
+
+                        <!-- 需求金额、已捐金额、已提金额 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal" >
+
+                            <!-- 需求金额 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/margin_15"
+                                android:paddingLeft="@dimen/margin_30"
+                                android:paddingTop="@dimen/margin_20" >
+
+                                <TextView
+                                    android:id="@id/textview_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/margin_20"
+                                    android:text="5000"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_15"
+                                    android:text="@string/need_account"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:layout_marginTop="@dimen/margin_20"
+                                android:contentDescription="@string/contentdescription"
+                                android:src="@color/background" />
+
+                            <!-- 已捐金额 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/margin_15"
+                                android:paddingLeft="@dimen/margin_30"
+                                android:paddingTop="@dimen/margin_20" >
+
+                                <TextView
+                                    android:id="@id/textview_3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/margin_20"
+                                    android:text="5000"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_15"
+                                    android:text="@string/alreay_account"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="@dimen/margin_20"
+                                android:layout_marginTop="@dimen/margin_20"
+                                android:contentDescription="@string/contentdescription"
+                                android:src="@color/background" />
+
+                            <!-- 已提金额 -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:paddingBottom="@dimen/margin_15"
+                                android:paddingLeft="@dimen/margin_30"
+                                android:paddingTop="@dimen/margin_20" >
+
+                                <TextView
+                                    android:id="@id/textview_4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/margin_20"
+                                    android:text="5000"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/margin_15"
+                                    android:text="@string/tixian_account"
+                                    android:textColor="@color/shenhui"
+                                    android:textSize="@dimen/textsize_8" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/margin_30"
+                            android:layout_marginRight="@dimen/margin_30"
+                            android:contentDescription="@string/contentdescription"
+                            android:src="@color/background" />
+                        <!-- 项目余额 -->
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_30"
+                            android:layout_marginRight="@dimen/margin_30"
+                            android:paddingBottom="@dimen/margin_40"
+                            android:paddingTop="@dimen/margin_40" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:text="@string/project_yue"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_9" />
+
+                            <TextView
+                                android:id="@id/textview_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:text="5000"
+                                android:textColor="@color/yellow"
+                                android:textSize="@dimen/textsize_12" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!-- 申请提现的内容 -->
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:background="@color/white"
+                        android:orientation="vertical" >
+
+                        <!-- 输入提现金额 -->
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_15"
+                            android:layout_marginLeft="@dimen/margin_35"
+                            android:layout_marginRight="@dimen/margin_35"
+                            android:layout_marginTop="@dimen/margin_35"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@id/ALBUM"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/margin_10"
+                                android:layout_weight="1"
+                                android:text="@string/tixian1"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_8" />
+
+                            <EditText
+                                android:id="@id/edittext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="20"
+                                android:background="@drawable/bg_edittext"
+                                android:gravity="center_horizontal"
+                                android:hint=""
+                                android:paddingBottom="@dimen/margin_20"
+                                android:paddingTop="@dimen/margin_20"
+                                android:text=""
+                                android:textColor="@color/title"
+                                android:textSize="@dimen/textsize_9" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_20"
+                                android:layout_weight="1"
+                                android:text="@string/yuan"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_8" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@id/button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/margin_45"
+                            android:layout_marginTop="@dimen/margin_5"
+                            android:background="@drawable/btn_login"
+                            android:text="@string/project_tixian"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/textsize_9" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_35"
+                                android:text="@string/project_shouzhu"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_7" />
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginRight="@dimen/margin_35"
+                                android:contentDescription="@string/contentdescription"
+                                android:src="@color/background" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@id/textview_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_35"
+                            android:layout_marginTop="@dimen/margin_20"
+                            android:text="陈浩"
+                            android:textColor="@color/shenhui"
+                            android:textSize="@dimen/textsize_8" />
+
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/margin_35"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@id/textview_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_35"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:text="工商银行"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_8" />
+
+                            <TextView
+                                android:id="@id/textview_8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_35"
+                                android:layout_marginTop="@dimen/margin_10"
+                                android:text="陈浩"
+                                android:textColor="@color/shenhui"
+                                android:textSize="@dimen/textsize_8" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </net.wb_gydp.view.RefreshLoadmoreLayout>
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+</LinearLayout>

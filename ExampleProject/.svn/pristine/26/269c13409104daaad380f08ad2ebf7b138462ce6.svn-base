@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+    
+
+    <net.wb_gydp.view.RefreshLoadmoreLayout
+        android:id="@+id/refreshLoadmoreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" >
+                
+                <ImageView 
+                    android:layout_width="fill_parent"
+                    android:layout_height="15dp"
+                    android:background="@color/background"
+                    android:contentDescription="@string/contentdescription"/>
+
+                <RelativeLayout
+                    android:id="@id/layout_0"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:id="@id/imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/margin_30"
+                        android:contentDescription="@string/contentdescription"
+                        android:padding="@dimen/margin_20"
+                        android:layout_marginLeft="@dimen/margin_30"
+                        android:src="@drawable/ic_logo" />
+
+                    <TextView
+                        android:id="@id/textview_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_toRightOf="@id/imageview"
+                        android:text="@string/yue1"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_8" />
+
+                    <TextView
+                        android:id="@id/textview_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_0"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_toRightOf="@id/imageview"
+                        android:text="@string/yue2"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:checked="true"
+                        android:layout_marginRight="@dimen/margin_20"
+                        android:button="@drawable/checkbox_pay" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <RelativeLayout
+                    android:id="@id/layout_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:id="@id/imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/margin_30"
+                        android:contentDescription="@string/contentdescription"
+                        android:paddingLeft="@dimen/margin_20"
+                        android:src="@drawable/img_zhifubao" />
+
+                    <TextView
+                        android:id="@id/textview_0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_toRightOf="@id/imageview"
+                        android:text="@string/zhifubao1"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_8" />
+
+                    <TextView
+                        android:id="@id/textview_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_0"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_toRightOf="@id/imageview"
+                        android:text="@string/zhifubao2"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/margin_20"
+                        android:button="@drawable/checkbox_pay" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_marginRight="@dimen/margin_30"
+                    android:contentDescription="@string/contentdescription"
+                    android:src="@color/background" />
+
+                <RelativeLayout
+                    android:id="@id/layout_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" >
+
+                    <ImageView
+                        android:id="@id/imageview_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/margin_30"
+                        android:contentDescription="@string/contentdescription"
+                        android:paddingLeft="@dimen/margin_20"
+                        android:src="@drawable/img_yinlian" />
+
+                    <TextView
+                        android:id="@id/textview_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_20"
+                        android:layout_toRightOf="@id/imageview_1"
+                        android:text="@string/yinlian1"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_8" />
+
+                    <TextView
+                        android:id="@id/textview_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textview_2"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_toRightOf="@id/imageview_1"
+                        android:text="@string/yinlian2"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/margin_20"
+                        android:button="@drawable/checkbox_pay" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/margin_40"
+                android:background="@drawable/btn_login"
+                android:text="@string/sure"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textsize_9" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/margin_50"
+                android:layout_marginBottom="@dimen/margin_10"
+                android:layout_marginRight="@dimen/margin_40"
+                android:layout_marginTop="@dimen/margin_30"
+                android:gravity="right"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/checkbox_register"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="@string/hide_name"
+                    android:textColor="@color/qianhui"
+                    android:textSize="@dimen/textsize_8" />
+            </LinearLayout>
+        </LinearLayout>
+    </net.wb_gydp.view.RefreshLoadmoreLayout>
+
+</LinearLayout>

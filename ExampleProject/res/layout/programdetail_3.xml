@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:contentDescription="@string/contentdescription"
+        android:src="@color/white" />
+
+    <LinearLayout
+        android:id="@id/layout_0"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/margin_80"
+        android:background="@color/title"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:layout_weight="1"
+            android:text="@string/project_lover"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_8" />
+
+        <ImageView
+            android:id="@id/checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_weight="10"
+            android:contentDescription="@string/contentdescription"
+            android:gravity="left"
+            android:src="@drawable/checkbox_down" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:contentDescription="@string/contentdescription"
+        android:src="@color/background" />
+
+</LinearLayout>

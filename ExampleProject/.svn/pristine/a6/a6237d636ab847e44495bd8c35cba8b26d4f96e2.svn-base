@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 标题右侧按钮样式 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bt_title_right_showlargepic_s" android:state_pressed="true"/>
+    <item android:drawable="@drawable/bt_title_right_showlargepic_s" android:state_focused="true"/>
+    <item android:drawable="@drawable/bt_title_right_showlargepic_n"/>
+
+</selector>

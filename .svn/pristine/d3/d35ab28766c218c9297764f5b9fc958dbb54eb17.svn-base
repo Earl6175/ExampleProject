@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/title"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title"
+    android:background="@color/title">
+    
+    <ImageButton
+        android:id="@id/title_btn_left"
+        android:layout_width="54dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:background="@color/title"
+        android:src="@drawable/btn_back" 
+        android:contentDescription="@string/contentdescription"/>
+
+    <Button
+        android:id="@id/title_btn_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:background="@color/title"
+        android:padding="@dimen/margin_10"
+        android:text="@string/register"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_9" />
+
+    <TextView
+        android:id="@id/title_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_10"
+        tools:ignore="SelectableText" />
+    
+</FrameLayout>
+

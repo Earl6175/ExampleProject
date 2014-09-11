@@ -1,0 +1,502 @@
+package net.wb_gydp;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import net.wb_gydp.adapter.ProgramAdapter;
+import net.wb_gydp.control.BaseResult;
+import net.wb_gydp.control.MResult;
+import net.wb_gydp.control.RequestInformation;
+import net.wb_gydp.control.TaskConstant;
+import net.wb_gydp.db.FirstPage_ProjectList_DBClient;
+import net.wb_gydp.db.FirstPage_ProjectTotal_DBClient;
+import net.wb_gydp.db.FirstPage_TurnImageList_DBClient;
+import net.wb_gydp.entity.ProjectListInfor;
+import net.wb_gydp.entity.ProjectTotalInfor;
+import net.wb_gydp.entity.ReadStatus;
+import net.wb_gydp.entity.SysCache;
+import net.wb_gydp.entity.TurnImageInfor;
+import net.wb_gydp.util.XtomProcessDialog;
+import net.wb_gydp.view.RefreshLoadmoreLayout;
+
+import org.json.JSONObject;
+
+import xtom.frame.exception.DataParseException;
+import xtom.frame.net.XtomNetTask;
+import xtom.frame.util.XtomToastUtil;
+import xtom.frame.view.XtomListView;
+import xtom.frame.view.XtomRefreshLoadmoreLayout;
+import xtom.frame.view.XtomRefreshLoadmoreLayout.OnStartListener;
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.view.WindowManager.LayoutParams;
+import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.widget.TextView;
+
+/**
+ * 项目选项卡中的项目,未登录时的首页
+ * */
+public class ProgramActivity extends BaseActivity {
+
+	private View title_layout;
+	private ImageButton left;
+	private ImageButton right;
+	private TextView title;
+
+	private RefreshLoadmoreLayout layout;
+	private ProgressBar progressBar;
+	private XtomListView listView;
+	private ProgramAdapter adapter;
+	private Dialog mDialog;
+	private String status = "1";
+	private int page = 0;
+
+	private long time;// 用于判断二次点击返回键的时间间隔
+
+	private ProjectTotalInfor totalInfor; // 项目总量统计
+	private ArrayList<TurnImageInfor> turnList = new ArrayList<TurnImageInfor>(); // 轮播题图
+	private ArrayList<ProjectListInfor> projectList = new ArrayList<ProjectListInfor>(); // 轮播题图
+
+	private FirstPage_ProjectTotal_DBClient total_client;
+	private FirstPage_TurnImageList_DBClient turn_client;
+	private FirstPage_ProjectList_DBClient project_client;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		setContentView(R.layout.activity_program);
+		super.onCreate(savedInstanceState);
+		total_client = FirstPage_ProjectTotal_DBClient.get(mContext);
+		turn_client = FirstPage_TurnImageList_DBClient.get(mContext);
+		project_client = FirstPage_ProjectList_DBClient.get(mContext);
+		if(total_client.isEmpty())
+			if(hasNetWork())
+				getProjectTotal();
+			else{
+				XtomToastUtil.showShortToast(mContext, R.string.nonetwork);
+				progressBar.setVisibility(View.GONE);
+				layout.setVisibility(View.VISIBLE);
+				adapter = new ProgramAdapter(mContext, totalInfor, turnList,
+						projectList);
+				adapter.setEmptyString("获取数据失败");
+				listView.setAdapter(adapter);
+			}	
+		else
+			getDataFromCache();
+	}
+	
+
+	private void getDataFromCache() {
+		if (!total_client.isEmpty())
+			totalInfor = total_client.select();
+		if (!turn_client.isEmpty())
+			turnList = turn_client.selectAll();
+		else{
+			if(hasNetWork())
+				getTurnImageList();
+			else{
+				XtomToastUtil.showShortToast(mContext, R.string.nonetwork);
+			}	
+		}			
+		if (!project_client.isEmpty(status)){
+			projectList = project_client.selectAll(status);
+			if (adapter == null) {
+				adapter = new ProgramAdapter(mContext, totalInfor, turnList,
+						projectList);
+				adapter.setEmptyString("目前没有项目列表");
+				listView.setAdapter(adapter);
+			} else {
+				adapter.setEmptyString("目前没有项目列表");
+				adapter.notifyDataSetChanged();
+			}
+		}else{
+			if(hasNetWork())
+				getProgramList(0, "刷新");
+			else{
+				XtomToastUtil.showShortToast(mContext, R.string.nonetwork);
+				return;
+			}
+		}		
+		progressBar.setVisibility(View.GONE);
+		layout.setVisibility(View.VISIBLE);
+	}
+
+	/**
+	 * 获取项目总量统计
+	 * */
+	private void getProjectTotal() {
+		HashMap<String, String> params = new HashMap<String, String>();
+		RequestInformation infor = RequestInformation.GET_PROJECT_TOTAL;
+		getDataFromServer(new XtomNetTask(infor.getTaskID(),
+				infor.getUrlPath(), params) {
+
+			@Override
+			public Object parse(JSONObject jsonObject)
+					throws DataParseException {
+				return new MResult<ProjectTotalInfor>(jsonObject) {
+
+					@Override
+					public ProjectTotalInfor parse(JSONObject jsonObject)
+							throws DataParseException {
+						return new ProjectTotalInfor(jsonObject);
+					}
+				};
+			}
+		});
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		if (SysCache.getUser() != null && hasNetWork()) {
+			getNotify_Num();
+		}
+	}
+
+	@Override
+	protected boolean onKeyBack() {
+		if ((System.currentTimeMillis() - time) >= 2000) {
+			XtomToastUtil.showShortToast(mContext, "再按一次返回键退出程序");
+			time = System.currentTimeMillis();
+		} else {
+			finish();
+		}
+		return true;
+	}
+
+	@Override
+	protected void findView() {
+		title_layout = (View) findViewById(R.id.title);
+		left = (ImageButton) findViewById(R.id.title_btn_left);
+		right = (ImageButton) findViewById(R.id.title_btn_right);
+		title = (TextView) findViewById(R.id.title_text);
+		layout = (RefreshLoadmoreLayout) findViewById(R.id.refreshLoadmoreLayout);
+		progressBar = (ProgressBar) findViewById(R.id.progressbar);
+		listView = (XtomListView) findViewById(R.id.listview);
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+	}
+
+	@Override
+	protected void setListener() {
+		title.setText(R.string.app_name);
+		left.setImageResource(R.drawable.logo);
+		right.setImageResource(R.drawable.btn_more);
+		right.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				showDialog();
+			}
+		});
+		layout.setOnStartListener(new OnStartListener() {
+
+			@Override
+			public void onStartRefresh(XtomRefreshLoadmoreLayout v) {
+				page = 0;
+				getProjectTotal();
+			}
+
+			@Override
+			public void onStartLoadmore(XtomRefreshLoadmoreLayout v) {
+				page++;
+				getProgramList(page, "加载");
+			}
+		});
+	}
+
+	private void showDialog() {
+		if (mDialog == null) {
+			mDialog = new Dialog(mContext, R.style.dialog);
+			mDialog.setCancelable(true);
+			mDialog.setCanceledOnTouchOutside(true);
+			Window dialogWindow = mDialog.getWindow();
+			LayoutParams lp = dialogWindow.getAttributes();
+			dialogWindow.setGravity(Gravity.RIGHT | Gravity.TOP);
+			int height = title_layout.getHeight();
+			lp.alpha = 1.0f;
+			lp.y = height - 10;
+			dialogWindow.setAttributes(lp);
+			mDialog.setContentView(R.layout.dialog_firstpage);
+			mDialog.show();
+			setDialog();
+		} else {
+			if (mDialog.isShowing())
+				mDialog.cancel();
+			else
+				mDialog.show();
+		}
+	}
+
+	private void setDialog() {
+		RadioGroup group = (RadioGroup) mDialog.findViewById(R.id.radiogroup);
+		group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				switch (checkedId) {
+				case R.id.radiobutton_0: // 正在募捐
+					status = "1";
+					mDialog.cancel();
+					// getProgramList(0, "刷新");
+					selectProgramList();
+					break;
+				case R.id.radiobutton_1: // 已在实施
+					status = "2";
+					mDialog.cancel();
+					// getProgramList(0, "刷新");
+					selectProgramList();
+					break;
+				case R.id.radiobutton_2: // 实施完成
+					status = "10";
+					mDialog.cancel();
+					// getProgramList(0, "刷新");
+					selectProgramList();
+					break;
+				}
+			}
+		});
+		setDialogCancel(R.id.radiobutton_0);
+		setDialogCancel(R.id.radiobutton_1);
+		setDialogCancel(R.id.radiobutton_2);
+	}
+
+	private void selectProgramList() {
+		projectList = project_client.selectAll(status);
+		if (projectList == null || projectList.size() == 0){
+			getProgramList(0, "刷新");
+		} else{
+			adapter = new ProgramAdapter(mContext, totalInfor, turnList,
+					projectList);
+			adapter.setEmptyString("目前没有项目列表");
+			listView.setAdapter(adapter);
+		}
+	}
+
+	private void setDialogCancel(int id) {
+		RadioButton mbt = (RadioButton) mDialog.findViewById(id);
+		mbt.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				mDialog.cancel();
+			}
+		});
+	}
+
+	/**
+	 * 获取轮播题图列表
+	 * */
+	private void getTurnImageList() {
+		HashMap<String, String> params = new HashMap<String, String>();
+		RequestInformation infor = RequestInformation.GET_TURN_IMG_LIST;
+		getDataFromServer(new XtomNetTask(infor.getTaskID(),
+				infor.getUrlPath(), params) {
+
+			@Override
+			public Object parse(JSONObject jsonObject)
+					throws DataParseException {
+				return new MResult<TurnImageInfor>(jsonObject) {
+
+					@Override
+					public TurnImageInfor parse(JSONObject jsonObject)
+							throws DataParseException {
+						return new TurnImageInfor(jsonObject);
+					}
+				};
+			}
+		});
+	}
+
+	/**
+	 * 获取项目列表
+	 * */
+	private void getProgramList(int current_page, String description) {
+		HashMap<String, String> params = new HashMap<String, String>();
+		if (!isNull(status))
+			params.put("status", status);
+		params.put("page", String.valueOf(current_page));
+		RequestInformation infor = RequestInformation.GET_PROJECT_LIST;
+		getDataFromServer(new XtomNetTask(infor.getTaskID(),
+				infor.getUrlPath(), params, description) {
+
+			@Override
+			public Object parse(JSONObject jsonObject)
+					throws DataParseException {
+				return new MResult<ProjectListInfor>(jsonObject) {
+
+					@Override
+					public ProjectListInfor parse(JSONObject jsonObject)
+							throws DataParseException {
+						return new ProjectListInfor(jsonObject);
+					}
+				};
+			}
+		});
+	}
+
+	private void getNotify_Num() {
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("token", SysCache.getUser().getToken());
+
+		RequestInformation infor = RequestInformation.GET_NOTIFY_NUM;
+		getDataFromServer(new XtomNetTask(infor.getTaskID(),
+				infor.getUrlPath(), params) {
+
+			@Override
+			public Object parse(JSONObject jsonObject)
+					throws DataParseException {
+				return new MResult<ReadStatus>(jsonObject) {
+
+					@Override
+					public ReadStatus parse(JSONObject jsonObject)
+							throws DataParseException {
+						return new ReadStatus(jsonObject);
+					}
+				};
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	protected void callBackForServerSuccess(int taskID, XtomNetTask netTask,
+			BaseResult result) {
+		switch (taskID) {
+		case TaskConstant.GET_PROJECT_TOTAL:
+			MResult<ProjectTotalInfor> total_base = (MResult<ProjectTotalInfor>) result;
+			totalInfor = total_base.getObjects().get(0);
+			if (!total_client.isEmpty())
+				total_client.clear();
+			total_client.insertOrUpdate(totalInfor);
+			getTurnImageList();
+			break;
+		case TaskConstant.GET_TURN_IMG_LIST:
+			MResult<TurnImageInfor> turn_base = (MResult<TurnImageInfor>) result;
+			turnList.clear();
+			turnList.addAll(turn_base.getObjects());
+			if (!turn_client.isEmpty())
+				turn_client.clear();
+			turn_client.insertOrUpdate(turnList);
+			getProgramList(page, "刷新");
+			break;
+		case TaskConstant.GET_PROJECT_LIST:
+			MResult<ProjectListInfor> project_base = (MResult<ProjectListInfor>) result;
+			ArrayList<ProjectListInfor> infors = project_base.getObjects();
+			if ("刷新".equals(netTask.getDescription())) {
+				layout.refreshSuccess();
+				this.projectList.clear();
+				this.projectList.addAll(infors);
+				if (projectList.size() > 0){
+					if(!project_client.isEmpty(status))
+						project_client.clear(status);
+					project_client.insertOrUpdate(this.projectList, status);
+				}
+				
+				if (infors.size() >= Integer.parseInt(SysCache.getSysInfo()
+						.getSys_pagesize()))
+					layout.setLoadmoreable(true);
+				else
+					layout.setLoadmoreable(false);
+			}
+			if ("加载".equals(netTask.getDescription())) {
+				layout.loadmoreSuccess();
+				if (infors.size() > 0)
+					this.projectList.addAll(infors);
+				else {
+					layout.setLoadmoreable(false);
+					XtomToastUtil.showShortToast(this, "已经到最后啦");
+				}
+			}
+			adapter = new ProgramAdapter(mContext, totalInfor, turnList,
+					projectList);
+			adapter.setEmptyString("目前没有项目列表");
+			listView.setAdapter(adapter);
+			break;
+		case TaskConstant.GET_NOTIFY_NUM:
+			MResult<ReadStatus> status = (MResult<ReadStatus>) result;
+			ReadStatus readstatus = status.getObjects().get(0);
+			String num = readstatus.getNum();
+			if (Integer.parseInt(num) > 0)
+				FirstPageActivity.getImageView().setVisibility(View.VISIBLE);
+			else
+				FirstPageActivity.getImageView().setVisibility(View.GONE);
+			break;
+		}
+		super.callBackForServerSuccess(taskID, netTask, result);
+	}
+
+	@Override
+	protected void callBackForServerFailed(int taskID, XtomNetTask netTask,
+			BaseResult result) {
+		switch (taskID) {
+		case TaskConstant.GET_PROJECT_TOTAL:
+		case TaskConstant.GET_TURN_IMG_LIST:
+		case TaskConstant.GET_PROJECT_LIST:
+			layout.refreshFailed();
+			break;
+		}
+		super.callBackForServerFailed(taskID, netTask, result);
+	}
+	
+
+	@Override
+	protected void callBackForServerSuccess(int taskID, BaseResult result) {
+
+	}
+
+	@Override
+	protected void callBackForServerFailed(int taskID, BaseResult result) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void callBeforeDataBack(int TaskID) {
+		switch (TaskID) {
+		case TaskConstant.GET_PROJECT_LIST:
+			XtomProcessDialog.show(mContext, "正在获取");
+			break;
+		}
+	}
+	
+	@Override
+	protected void noNetWork(XtomNetTask task) {
+		switch (task.getId()) {
+		case TaskConstant.GET_PROJECT_TOTAL:
+		case TaskConstant.GET_TURN_IMG_LIST:
+		case TaskConstant.GET_PROJECT_LIST:
+			layout.refreshFailed();
+			break;
+		}
+	}
+	@Override
+	protected void callAfterDataBack(int TaskID) {
+		switch (TaskID) {
+		case TaskConstant.GET_PROJECT_TOTAL:
+			break;
+		case TaskConstant.GET_TURN_IMG_LIST:
+			break;
+		case TaskConstant.GET_PROJECT_LIST:
+			if (progressBar.getVisibility() == View.VISIBLE) {
+				progressBar.setVisibility(View.GONE);
+				layout.setVisibility(View.VISIBLE);
+				XtomProcessDialog.cancel();
+			} else {
+				XtomProcessDialog.cancel();
+			}
+			break;
+		}
+	}
+
+}

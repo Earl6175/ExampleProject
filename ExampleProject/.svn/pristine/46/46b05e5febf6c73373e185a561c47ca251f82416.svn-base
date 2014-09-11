@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@id/textview_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:text="支付宝"
+        android:textColor="@color/set"
+        android:textSize="@dimen/textsize_8"/>
+    
+    <TextView 
+        android:id="@id/textview_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_30"
+        android:layout_below="@id/textview_0"
+        android:text="2014-05-12"
+        android:textColor="@color/qianhui"
+        android:textSize="@dimen/textsize_7"/>
+    
+    <TextView 
+        android:id="@id/textview_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_25"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_alignParentRight="true"
+        android:text="200"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/textsize_8"/>
+    
+    <TextView 
+        android:id="@id/textview_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/margin_30"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textview_2"
+        android:text="@string/yuan1"
+        android:textColor="@color/qianhui"
+        android:textSize="@dimen/textsize_6"/>
+    
+    <ImageView 
+        android:id="@id/textview_4"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/textview_1"
+        android:layout_marginTop="@dimen/margin_15"
+        android:src="@color/background"
+        android:contentDescription="@string/contentdescription"/>
+    
+</RelativeLayout>

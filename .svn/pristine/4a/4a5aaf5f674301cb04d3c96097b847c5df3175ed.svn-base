@@ -1,0 +1,103 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@id/layout_0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            >
+
+            <RadioGroup
+                android:id="@id/radiogroup"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@id/radiobutton_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableTop="@drawable/tab_program"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="@string/program"
+                    android:textColor="@color/normal_white_pressed_green"
+                    android:textSize="@dimen/textsize_7" />
+
+                <RadioButton
+                    android:id="@id/radiobutton_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:drawableTop="@drawable/tab_message"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="@string/message"
+                    android:textColor="@color/normal_white_pressed_green"
+                    android:textSize="@dimen/textsize_7" />
+
+                <RadioButton
+                    android:id="@id/radiobutton_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:button="@null"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:drawableTop="@drawable/tab_me"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="@dimen/margin_10"
+                    android:paddingTop="@dimen/margin_10"
+                    android:text="@string/me"
+                    android:textColor="@color/normal_white_pressed_green"
+                    android:textSize="@dimen/textsize_7" />
+            </RadioGroup>
+
+            <ImageView
+                android:id="@id/imageview_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:contentDescription="@string/contentdescription"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingLeft="@dimen/margin_40"
+                android:src="@drawable/ic_point"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+
+</TabHost>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/margin_50"
+        android:background="@color/background"
+        android:contentDescription="@string/contentdescription" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@id/layout_0"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@id/imageview_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_35"
+                android:layout_marginRight="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_30"
+                android:background="@drawable/ic_phone"
+                android:contentDescription="@string/contentdescription" />
+
+            <EditText
+                android:id="@id/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:inputType="number"
+                android:hint=""
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/qianhui" 
+                android:textSize="@dimen/textsize_8"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@id/imageview"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/layout_0"
+            android:layout_marginLeft="@dimen/margin_110"
+            android:background="@drawable/divier_name_password"
+            android:contentDescription="@string/contentdescription" />
+
+        <LinearLayout
+            android:id="@id/layout_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageview"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@id/imageview_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:layout_marginBottom="@dimen/margin_30"
+                android:layout_marginLeft="@dimen/margin_35"
+                android:layout_marginRight="@dimen/margin_25"
+                android:layout_marginTop="@dimen/margin_30"
+                android:background="@drawable/ic_password"
+                android:contentDescription="@string/contentdescription" />
+
+            <EditText
+                android:id="@id/edittext_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:hint=""
+                android:text=""
+                android:textColor="@color/black"
+                android:textColorHint="@color/qianhui" 
+                android:textSize="@dimen/textsize_8"/>
+        </LinearLayout>
+    </RelativeLayout>
+    
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/background"
+        android:contentDescription="@string/contentdescription" />
+
+</LinearLayout>

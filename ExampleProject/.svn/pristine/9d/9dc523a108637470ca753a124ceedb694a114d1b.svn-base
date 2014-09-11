@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_more"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RadioButton
+            android:id="@id/radiobutton_0"
+            style="@style/bt_dialog"
+            android:layout_marginBottom="@dimen/margin_35"
+            android:layout_marginTop="@dimen/margin_40"
+            android:layout_marginRight="@dimen/margin_20"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableRight="@drawable/checkbox_firstpage"
+            android:text="@string/first_zhzmj" />
+        
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:src="@color/background"
+            android:contentDescription="@string/contentdescription"/>
+
+        <RadioButton
+            android:id="@id/radiobutton_1"
+            style="@style/bt_dialog"
+            android:layout_marginBottom="@dimen/margin_35"
+            android:layout_marginTop="@dimen/margin_35"
+            android:layout_marginRight="@dimen/margin_20"
+            android:drawableRight="@drawable/checkbox_firstpage"
+            android:layout_weight="1"
+            android:text="@string/first_yzss" />
+        
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:src="@color/background"
+            android:contentDescription="@string/contentdescription"/>
+
+        <RadioButton
+            android:id="@id/radiobutton_2"
+            style="@style/bt_dialog"
+            android:layout_marginBottom="@dimen/margin_35"
+            android:layout_marginTop="@dimen/margin_35"
+            android:layout_marginRight="@dimen/margin_20"
+            android:drawableRight="@drawable/checkbox_firstpage"
+            android:layout_weight="1"
+            android:text="@string/first_sswc" />
+    </RadioGroup>
+
+</LinearLayout>

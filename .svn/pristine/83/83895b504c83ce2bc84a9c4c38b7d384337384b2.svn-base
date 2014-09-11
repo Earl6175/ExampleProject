@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_alltext" />
+
+    <!-- 登录名和密码 -->
+
+    <include layout="@layout/name_password" />
+
+    <!-- 输入验证码 -->
+    <include layout="@layout/input_verify_code"/>
+ 
+    <Button
+        android:id="@id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_80"
+        android:background="@drawable/btn_login"
+        android:text="@string/sure"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_9" />
+    
+    <!-- checkbox 是否同意协议 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/margin_50"
+        android:layout_marginBottom="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_40"
+        android:layout_marginTop="@dimen/margin_30"
+        android:gravity="right"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/checkbox_register"
+            android:checked="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:clickable="true"
+            android:text="@string/agree1"
+            android:textColor="@color/qianhui"
+            android:textSize="@dimen/textsize_7" />
+        
+        <TextView
+            android:id="@id/textview_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="@string/agree2"
+            android:textColor="@color/title"
+            android:textSize="@dimen/textsize_7" />
+    </LinearLayout>
+
+</LinearLayout>

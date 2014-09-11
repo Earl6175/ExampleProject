@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/margin_25"
+    android:paddingRight="@dimen/margin_25"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30"
+        android:layout_marginBottom="@dimen/margin_30"
+        android:orientation="horizontal">
+        
+        <ImageView 
+            android:id="@id/imageview"
+            android:layout_width="@dimen/imagesize_3"
+            android:layout_height="@dimen/imagesize_3"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:background="@color/background"
+            android:contentDescription="@string/contentdescription"/>
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_20"
+            android:orientation="vertical">
+            
+            <TextView 
+                android:id="@id/textview_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/textsize_7"/>
+            
+            <TextView 
+                android:id="@id/textview_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_5"
+                android:text=""
+                android:textColor="@color/qianhui"
+                android:textSize="@dimen/textsize_7"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@id/textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:text=""
+        android:textColor="@color/set"
+        android:textSize="@dimen/textsize_8"/>
+    
+    <ImageView 
+        android:id="@id/imageview_0"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher"
+        android:contentDescription="@string/contentdescription"/>
+    
+    <ImageView 
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:src="@color/background"
+        android:contentDescription="@string/contentdescription"/>
+
+</LinearLayout>

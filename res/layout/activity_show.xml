@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:id="@id/radiogroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/margin_60" >
+        </RadioGroup>
+
+        <TextView
+            android:id="@id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/margin_30"
+            android:drawableLeft="@drawable/img_goin"
+            android:drawablePadding="@dimen/margin_10"
+            android:gravity="right"
+            android:paddingBottom="@dimen/margin_60"
+            android:text="@string/start"
+            android:textColor="@color/title"
+            android:textSize="@dimen/textsize_8"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</FrameLayout>

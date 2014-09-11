@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/bg_LinearLayout" >
+
+    <!-- 标题栏 -->
+
+    <include layout="@layout/title_text" />
+
+    <net.wb_gydp.view.RefreshLoadmoreLayout
+        android:id="@+id/refreshLoadmoreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <net.wb_gydp.view.MGallery
+                    android:id="@+id/gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="left"
+                    android:padding="@dimen/margin_15"
+                    android:scrollbars="none" />
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/margin_25"
+                    android:background="@color/background"
+                    android:contentDescription="@string/contentdescription" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical" >
+
+                    <!-- 机构名称 -->
+
+                    <TextView
+                        android:id="@id/textview"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_25"
+                        android:text="慈善机构"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_9" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:contentDescription="@string/contentdescription"
+                        android:src="@color/background" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_25"
+                        android:text="@string/address"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+                    <!-- 地址 -->
+
+                    <TextView
+                        android:id="@id/textview_0"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_15"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:maxLines="2"
+                        android:text="北京市东城区"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_8" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_25"
+                        android:text="@string/linkmobile"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+                    <!-- 电话 -->
+
+                    <TextView
+                        android:id="@id/textview_1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:maxLines="1"
+                        android:text="北京市东城区"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_8" />
+                    <!-- 网址 -->
+
+                    <TextView
+                        android:id="@id/textview_2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:maxLines="1"
+                        android:text="北京市东城区"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_8" />
+                    <!-- Email -->
+
+                    <TextView
+                        android:id="@id/textview_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:maxLines="1"
+                        android:text="北京市东城区"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_8" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_25"
+                        android:text="@string/organizationinfor"
+                        android:textColor="@color/qianhui"
+                        android:textSize="@dimen/textsize_7" />
+                    <!-- 机构简介 -->
+
+                    <TextView
+                        android:id="@id/textview_4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin_35"
+                        android:layout_marginLeft="@dimen/margin_25"
+                        android:layout_marginRight="@dimen/margin_25"
+                        android:layout_marginTop="@dimen/margin_15"
+                        android:text="北京市东城区"
+                        android:textColor="@color/set"
+                        android:textSize="@dimen/textsize_8" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </net.wb_gydp.view.RefreshLoadmoreLayout>
+
+</LinearLayout>
