@@ -31,52 +31,54 @@ import android.widget.TextView;
 /**
  * 我的账户
  * */
-public class AccountActivity extends BaseActivity{
-	
+public class AccountActivity extends BaseActivity {
+
 	private ImageButton left;
 	private Button right;
 	private TextView title;
 	private RefreshLoadmoreLayout layout;
-	private TextView text_yue; //账户余额
-	private LinearLayout layout_charge; //充值记录
-	private Button button; //我要充值
-	
+	private TextView text_yue; // 账户余额
+	private LinearLayout layout_charge; // 充值记录
+	private Button button; // 我要充值
+
 	private User user;
 	private UserDBClient mClient;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		setContentView(R.layout.activity_account);
 		super.onCreate(savedInstanceState);
 		mClient = UserDBClient.get(mContext);
-		if(mClient.isExist(SysCache.getUser().getUid())){
+		if (mClient.isExist(SysCache.getUser().getUid())) {
 			user = mClient.selectByUid(SysCache.getUser().getUid());
-			text_yue.setText(String.valueOf(Integer.parseInt(user.getAccount_money())/100));
-		}else{
-			if(hasNetWork())
+			text_yue.setText(String.valueOf(Integer.parseInt(user
+					.getAccount_money()) / 100));
+		} else {
+			if (hasNetWork())
 				getInfor();
-			else{
-				XtomToastUtil.showShortToast(mContext,R.string.nonetwork);
-				return ;
-			}	
+			else {
+				XtomToastUtil.showShortToast(mContext, R.string.nonetwork);
+				return;
+			}
 		}
 	}
-	
+
 	@Override
 	protected boolean onKeyBack() {
 		finish();
 		return true;
 	}
-	
-	private void getInfor(){
+
+	private void getInfor() {
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("token", SysCache.getUser().getToken());
 		RequestInformation infor = RequestInformation.GET_MY_INFO;
 		getDataFromServer(new XtomNetTask(infor.getTaskID(),
-				infor.getUrlPath(),params) {
-			
+				infor.getUrlPath(), params) {
+
 			@Override
-			public Object parse(JSONObject jsonObject) throws DataParseException {
+			public Object parse(JSONObject jsonObject)
+					throws DataParseException {
 				return new MResult<User>(jsonObject) {
 
 					@Override
@@ -88,7 +90,7 @@ public class AccountActivity extends BaseActivity{
 			}
 		});
 	}
-	
+
 	@Override
 	protected void findView() {
 		left = (ImageButton) findViewById(R.id.title_btn_left);
@@ -99,12 +101,12 @@ public class AccountActivity extends BaseActivity{
 		layout_charge = (LinearLayout) findViewById(R.id.layout_0);
 		button = (Button) findViewById(R.id.button);
 	}
-	
+
 	@Override
 	protected void setListener() {
 		title.setText(R.string.myaccount);
 		left.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				finish();
@@ -112,28 +114,28 @@ public class AccountActivity extends BaseActivity{
 		});
 		right.setVisibility(View.INVISIBLE);
 		layout.setOnStartListener(new OnStartListener() {
-			
+
 			@Override
 			public void onStartRefresh(XtomRefreshLoadmoreLayout v) {
 				getInfor();
 			}
-			
+
 			@Override
 			public void onStartLoadmore(XtomRefreshLoadmoreLayout v) {
 			}
 		});
 		layout.setLoadmoreable(false);
 		layout_charge.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent it = new Intent(mContext, ChargeRecordActivity.class);
 				startActivity(it);
 			}
 		});
-		
+
 		button.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Intent it = new Intent(mContext, ChargeActivity.class);
@@ -141,7 +143,7 @@ public class AccountActivity extends BaseActivity{
 			}
 		});
 	}
-	
+
 	@Override
 	protected void callBackForServerSuccess(int taskID, XtomNetTask netTask,
 			BaseResult result) {
@@ -152,12 +154,13 @@ public class AccountActivity extends BaseActivity{
 			layout.refreshSuccess();
 			user = user_base.getObjects().get(0);
 			mClient.insertOrUpdate(user);
-			text_yue.setText(String.valueOf(Integer.parseInt(user.getAccount_money())/100));
+			text_yue.setText(String.valueOf(Integer.parseInt(user
+					.getAccount_money()) / 100));
 			break;
 		}
 		super.callBackForServerSuccess(taskID, netTask, result);
 	}
-	
+
 	@Override
 	protected void callBackForGetDataFailed(int type, XtomNetTask netTask) {
 		switch (netTask.getId()) {
@@ -167,7 +170,7 @@ public class AccountActivity extends BaseActivity{
 		}
 		super.callBackForGetDataFailed(type, netTask);
 	}
-	
+
 	@Override
 	protected void noNetWork(int taskID) {
 		switch (taskID) {
@@ -181,13 +184,13 @@ public class AccountActivity extends BaseActivity{
 	@Override
 	protected void callBackForServerSuccess(int taskID, BaseResult result) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	protected void callBackForServerFailed(int taskID, BaseResult result) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
